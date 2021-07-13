@@ -11,7 +11,7 @@ import SwiftUI
 struct Good_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainActivity()
         }
     }
 }
