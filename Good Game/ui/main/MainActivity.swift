@@ -15,7 +15,7 @@ struct MainActivity: View {
                 }
                     .tabItem {
                         VStack {
-                            Image(systemName: "h.circle")
+                            Image(systemName: "house")
                             Text("Home")
                         }
                     }
@@ -25,12 +25,13 @@ struct MainActivity: View {
                 }
                     .tabItem {
                         VStack {
-                            Image(systemName: "p.circle")
+                            Image(systemName: "info.circle")
                             Text("About")
                         }
                     }
                     .tag(2)
             }
+            .accentColor(.yellow)
     }
 }
 
