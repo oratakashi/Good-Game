@@ -14,17 +14,24 @@ struct ApiClient {
         if query.count == 0 {
             components.queryItems = [
                 URLQueryItem(name: "key", value: Config().apiKey),
-                URLQueryItem(name: "page_size", value: pageSize),
                 URLQueryItem(name: "platforms", value: "4")
             ]
+            
+            if pageSize == Config().pageSize{
+                components.queryItems?.append(URLQueryItem(name: "page_size", value: Config().pageSize))
+            }else if pageSize != "0"{
+                components.queryItems?.append(URLQueryItem(name: "page_size", value: pageSize))
+            }
         } else {
             tmpQuery.append(URLQueryItem(name: "key", value: Config().apiKey))
             tmpQuery.append(URLQueryItem(name: "platforms", value: "4"))
-            if !tmpQuery.contains(URLQueryItem(name: "page_size", value: pageSize)) {
-                tmpQuery.append(URLQueryItem(name: "page_size", value: pageSize))
-            }
             print(tmpQuery)
             components.queryItems = tmpQuery
+            if pageSize == Config().pageSize {
+                components.queryItems?.append(URLQueryItem(name: "page_size", value: Config().pageSize))
+            }else if pageSize != "0"{
+                components.queryItems?.append(URLQueryItem(name: "page_size", value: pageSize))
+            }
         }
         
         return URLRequest(url: components.url!)

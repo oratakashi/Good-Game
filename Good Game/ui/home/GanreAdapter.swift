@@ -11,7 +11,6 @@ struct GanreAdapter: View {
     var game: Games
     
     @State var gameImage = UIImage(named: "imgLoading")!
-    @State private var width: CGFloat? = 0
     
     var body: some View {
         ZStack {
@@ -50,7 +49,7 @@ struct GanreAdapter: View {
                         }.resume()
                     }
                 }
-            NavigationLink(destination: DetailActivity()) {
+            NavigationLink(destination: DetailActivity(game: game)) {
                 Rectangle().opacity(0.0)
             }
         }

@@ -8,5 +8,5 @@
 import Foundation
 
 class ViewModel: ObservableObject {    
-    @Published var isLoading: Bool = true
+    var client: ApiClient = ApiClient()
 }

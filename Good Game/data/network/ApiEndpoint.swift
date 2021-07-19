@@ -10,6 +10,7 @@ import Foundation
 enum ApiEndpoint{
     case games
     case genre
+    case detail(gameId: Int)
     
     func values() -> String {
         switch self {
@@ -17,6 +18,8 @@ enum ApiEndpoint{
                 return "games"
             case .genre:
                 return "genres"
+            case let .detail(gameId):
+                return "games/\(String(gameId))"
         }
     }
 }

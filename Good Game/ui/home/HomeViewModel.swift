@@ -9,8 +9,7 @@ import Foundation
 
 final class HomeViewModel: ViewModel {
     
-    var client: ApiClient = ApiClient()
-    
+    @Published var isLoading: Bool = true
     @Published var topRating: [Games] = []
     @Published var genreGames: [Int: [Games]] = [:]
     @Published var genres: [Genres] = []

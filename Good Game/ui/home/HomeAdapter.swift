@@ -11,12 +11,11 @@ struct HomeAdapter: View {
     var game: Games
     
     @State var gameImage = UIImage(named: "imgLoading")!
-    @State private var width: CGFloat? = 0
     
     var body: some View {
         ZStack{
-            NavigationLink(destination: DetailActivity()) {
-                Rectangle().opacity(0)
+            NavigationLink(destination: DetailActivity(game: game)) {
+                Rectangle().opacity(0.0)
             }
             HStack(alignment: .top) {
                 Image(uiImage: gameImage)

@@ -89,7 +89,7 @@ struct HomeFragment: View {
             viewModel.getHome()
         }
         .clipped()
-        .navigationBarTitle(Text("Home"), displayMode: .large)
+        .navigationBarTitle(Text("Good Game"), displayMode: .large)
     }
 }
 

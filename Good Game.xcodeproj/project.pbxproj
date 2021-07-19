@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,10 @@
 		2796BCED26A2BC2500F6BA47 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */; };
 		2796BCF126A2CA1F00F6BA47 /* ResponseGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCF026A2CA1F00F6BA47 /* ResponseGenre.swift */; };
 		2796BCF326A2CA3100F6BA47 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCF226A2CA3100F6BA47 /* Genres.swift */; };
+		27BBB33C26A5B43D00339239 /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = 27BBB33B26A5B43D00339239 /* AttributedText */; };
+		27BBB33E26A5C1B500339239 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33D26A5C1B500339239 /* DetailViewModel.swift */; };
+		27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33F26A5C22A00339239 /* DetailGames.swift */; };
+		27BBB34326A5D2D300339239 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB34226A5D2D300339239 /* StarView.swift */; };
 		27DCE60826A32FAB005C8673 /* GanreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCE60726A32FAB005C8673 /* GanreAdapter.swift */; };
 		27DCE60C26A33611005C8673 /* LayoutShimmerGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */; };
 		DCDC7FF28F051AC9DF5F7088 /* Pods_Good_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FF891744A23A81C1C2C529 /* Pods_Good_Game.framework */; };
@@ -56,6 +60,9 @@
 		2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		2796BCF026A2CA1F00F6BA47 /* ResponseGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGenre.swift; sourceTree = "<group>"; };
 		2796BCF226A2CA3100F6BA47 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		27BBB33D26A5C1B500339239 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		27BBB33F26A5C22A00339239 /* DetailGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGames.swift; sourceTree = "<group>"; };
+		27BBB34226A5D2D300339239 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		27DCE60726A32FAB005C8673 /* GanreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanreAdapter.swift; sourceTree = "<group>"; };
 		27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutShimmerGenres.swift; sourceTree = "<group>"; };
 		43287279A972A405DFB13329 /* Pods-Good Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Game.release.xcconfig"; path = "Target Support Files/Pods-Good Game/Pods-Good Game.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDC7FF28F051AC9DF5F7088 /* Pods_Good_Game.framework in Frameworks */,
+				27BBB33C26A5B43D00339239 /* AttributedText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				2796BCE226A292FD00F6BA47 /* DetailActivity.swift */,
+				27BBB33D26A5C1B500339239 /* DetailViewModel.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 				2796BCE826A2BBE300F6BA47 /* LayoutShimmerGame.swift */,
 				2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */,
 				27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */,
+				27BBB34226A5D2D300339239 /* StarView.swift */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 		2796BCEE26A2C78900F6BA47 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				27BBB34126A5C23100339239 /* detail */,
 				270B80F8269F2ED8007327F6 /* Response.swift */,
 				270B80FA269F2F56007327F6 /* Games.swift */,
 			);
@@ -248,6 +259,14 @@
 				2796BCF226A2CA3100F6BA47 /* Genres.swift */,
 			);
 			path = genre;
+			sourceTree = "<group>";
+		};
+		27BBB34126A5C23100339239 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				27BBB33F26A5C22A00339239 /* DetailGames.swift */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 		60D7DB95F17247E6A5D16695 /* Frameworks */ = {
@@ -284,6 +303,9 @@
 			dependencies = (
 			);
 			name = "Good Game";
+			packageProductDependencies = (
+				27BBB33B26A5B43D00339239 /* AttributedText */,
+			);
 			productName = "Good Game";
 			productReference = 27007A73269DD4040032D6F8 /* Good Game.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +333,9 @@
 				Base,
 			);
 			mainGroup = 27007A6A269DD4040032D6F8;
+			packageReferences = (
+				27BBB33A26A5B43D00339239 /* XCRemoteSwiftPackageReference "AttributedText" */,
+			);
 			productRefGroup = 27007A74269DD4040032D6F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,14 +395,17 @@
 				2728070A26A1E41100C1CE51 /* HomeAdapter.swift in Sources */,
 				27007A94269DDC2F0032D6F8 /* ProfileFragment.swift in Sources */,
 				270B80FB269F2F56007327F6 /* Games.swift in Sources */,
+				27BBB34326A5D2D300339239 /* StarView.swift in Sources */,
 				27007A92269DDB6D0032D6F8 /* HomeFragment.swift in Sources */,
 				2796BCF326A2CA3100F6BA47 /* Genres.swift in Sources */,
+				27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */,
 				27DCE60C26A33611005C8673 /* LayoutShimmerGenres.swift in Sources */,
 				2796BCF126A2CA1F00F6BA47 /* ResponseGenre.swift in Sources */,
 				2796BCE926A2BBE300F6BA47 /* LayoutShimmerGame.swift in Sources */,
 				2728070C26A1F1F700C1CE51 /* Extension.swift in Sources */,
 				27047169269F3EE600AF05C0 /* ApiEndpoint.swift in Sources */,
 				2796BCED26A2BC2500F6BA47 /* ShimmerView.swift in Sources */,
+				27BBB33E26A5C1B500339239 /* DetailViewModel.swift in Sources */,
 				270B80F7269F2D10007327F6 /* Config.swift in Sources */,
 				27DCE60826A32FAB005C8673 /* GanreAdapter.swift in Sources */,
 				270B80F9269F2ED8007327F6 /* Response.swift in Sources */,
@@ -572,6 +600,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27BBB33A26A5B43D00339239 /* XCRemoteSwiftPackageReference "AttributedText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Iaenhaall/AttributedText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27BBB33B26A5B43D00339239 /* AttributedText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27BBB33A26A5B43D00339239 /* XCRemoteSwiftPackageReference "AttributedText" */;
+			productName = AttributedText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27007A6B269DD4040032D6F8 /* Project object */;
 }
