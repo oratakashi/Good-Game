@@ -17,7 +17,7 @@ struct DetailActivity: View {
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 10){
+            VStack(alignment: .leading, spacing: 16){
                 if viewModel.isLoading == false {
                     let data = viewModel.detailGame.first!
                     Image(uiImage: gameImage)
@@ -37,26 +37,30 @@ struct DetailActivity: View {
                                 }.resume()
                             }
                         }
-                    Text(data.name)
-                        .font(.system(size: 26, weight: .bold))
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
-                    Text(data.publishers.first?.name ?? "Unknown")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.yellow)
-                    HStack(spacing: 10){
-                        StarView(rating: CGFloat(data.rating), size: 15)
-                        Text(String(data.rating))
-                            .font(.system(size: 16, weight: .medium))
-                        Text("( "+String(data.ratings_count)+" Review's )")
-                            .font(.system(size: 16, weight: .regular))
-                            .foregroundColor(.gray)
-                        Spacer()
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(data.name)
+                            .font(.system(size: 26, weight: .bold))
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
+                        Text(data.publishers.first?.name ?? "Unknown")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.yellow)
+                        HStack(spacing: 10){
+                            StarView(rating: CGFloat(data.rating), size: 15)
+                            Text(String(data.rating))
+                                .font(.system(size: 16, weight: .medium))
+                            Text("( "+String(data.ratings_count)+" Review's )")
+                                .font(.system(size: 16, weight: .regular))
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
                     }
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     Rectangle()
                         .foregroundColor(.secondary)
                         .frame(height: 3)
-                        .padding(EdgeInsets(top: 16, leading: 0, bottom: 10, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .opacity(0.8)
                     
                     // Genre
                     ScrollView(.horizontal,showsIndicators: false) {
@@ -73,15 +77,57 @@ struct DetailActivity: View {
                         }
                     }
                     .clipped()
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     
                     Rectangle()
                         .foregroundColor(.secondary)
                         .frame(height: 3)
-                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-                    Text("Description")
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .opacity(0.8)
+                    ZStack{
+                        NavigationLink(destination: LayoutAboutGame(game: data)) {
+                            Rectangle().opacity(0.0)
+                        }
+                        HStack{
+                            Text("About This Game")
+                                .font(.system(size: 24, weight: .bold))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.yellow)
+                        }
+                    }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    
+                    ZStack {
+                        if data.description_raw.count > 200 {
+                            AttributedText(String(data.description_raw.prefix(200)) + " ...")
+                            
+                        } else if data.description_raw.count == 0 {
+                            AttributedText("<i>Description not available</i>")
+                        } else {
+                            AttributedText(data.description_raw)
+                        }
+                    }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    
+                    Text("Screenshot")
                         .font(.system(size: 24, weight: .bold))
-                        .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
-                    AttributedText(data.description_raw)
+                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    
+                    // Screenshot
+                    ScrollView(.horizontal,showsIndicators: false) {
+                        HStack(spacing: 13) {
+                            if(viewModel.ssLoading == false){
+                                ForEach(viewModel.screenShots){ screenShot in
+                                    if(screenShot.id == viewModel.screenShots.first!.id){
+                                        ScreenshotAdapter(screenShots: screenShot)
+                                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+                                    }else{
+                                        ScreenshotAdapter(screenShots: screenShot)
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -62,6 +62,6 @@ struct GanreAdapter_Previews: PreviewProvider {
         GanreAdapter(game: Games(
             id: 3498, name: "Grand Theft Auto V", released: "2013-09-17", background_image: "https://media.rawg.io/media/games/84d/84da2ac3fdfc6507807a1808595afb12.jpg", rating: 4.48
         ))
-        .previewLayout(.fixed(width: 250, height: 400))
+        .previewLayout(.fixed(width: 180, height: 250))
     }
 }

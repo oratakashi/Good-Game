@@ -11,6 +11,7 @@ enum ApiEndpoint{
     case games
     case genre
     case detail(gameId: Int)
+    case screenshot(gameId: Int)
     
     func values() -> String {
         switch self {
@@ -20,6 +21,8 @@ enum ApiEndpoint{
                 return "genres"
             case let .detail(gameId):
                 return "games/\(String(gameId))"
+            case let .screenshot(gameId):
+                return "games/\(String(gameId))/screenshots"
         }
     }
 }

@@ -27,6 +27,12 @@
 		2796BCED26A2BC2500F6BA47 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */; };
 		2796BCF126A2CA1F00F6BA47 /* ResponseGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCF026A2CA1F00F6BA47 /* ResponseGenre.swift */; };
 		2796BCF326A2CA3100F6BA47 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCF226A2CA3100F6BA47 /* Genres.swift */; };
+		27ACF00E26A6A04B003BABB0 /* LayoutDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF00D26A6A04B003BABB0 /* LayoutDescription.swift */; };
+		27ACF01026A6A8E6003BABB0 /* ScreenshotAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF00F26A6A8E6003BABB0 /* ScreenshotAdapter.swift */; };
+		27ACF01326A6A940003BABB0 /* Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF01226A6A940003BABB0 /* Screenshot.swift */; };
+		27ACF01526A6AA86003BABB0 /* ResponseScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF01426A6AA86003BABB0 /* ResponseScreenshots.swift */; };
+		27ACF01726A6B23C003BABB0 /* LayoutShimmerScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF01626A6B23C003BABB0 /* LayoutShimmerScreenshot.swift */; };
+		27ACF01926A6BFAC003BABB0 /* LayoutAboutGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ACF01826A6BFAC003BABB0 /* LayoutAboutGame.swift */; };
 		27BBB33C26A5B43D00339239 /* AttributedText in Frameworks */ = {isa = PBXBuildFile; productRef = 27BBB33B26A5B43D00339239 /* AttributedText */; };
 		27BBB33E26A5C1B500339239 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33D26A5C1B500339239 /* DetailViewModel.swift */; };
 		27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33F26A5C22A00339239 /* DetailGames.swift */; };
@@ -60,6 +66,12 @@
 		2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		2796BCF026A2CA1F00F6BA47 /* ResponseGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGenre.swift; sourceTree = "<group>"; };
 		2796BCF226A2CA3100F6BA47 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		27ACF00D26A6A04B003BABB0 /* LayoutDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDescription.swift; sourceTree = "<group>"; };
+		27ACF00F26A6A8E6003BABB0 /* ScreenshotAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAdapter.swift; sourceTree = "<group>"; };
+		27ACF01226A6A940003BABB0 /* Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshot.swift; sourceTree = "<group>"; };
+		27ACF01426A6AA86003BABB0 /* ResponseScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseScreenshots.swift; sourceTree = "<group>"; };
+		27ACF01626A6B23C003BABB0 /* LayoutShimmerScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutShimmerScreenshot.swift; sourceTree = "<group>"; };
+		27ACF01826A6BFAC003BABB0 /* LayoutAboutGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAboutGame.swift; sourceTree = "<group>"; };
 		27BBB33D26A5C1B500339239 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		27BBB33F26A5C22A00339239 /* DetailGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGames.swift; sourceTree = "<group>"; };
 		27BBB34226A5D2D300339239 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 			children = (
 				2796BCE226A292FD00F6BA47 /* DetailActivity.swift */,
 				27BBB33D26A5C1B500339239 /* DetailViewModel.swift */,
+				27ACF00F26A6A8E6003BABB0 /* ScreenshotAdapter.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 		27007A8B269DD8C90032D6F8 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				27ACF01126A6A927003BABB0 /* screenshots */,
 				2796BCEF26A2C79900F6BA47 /* genre */,
 				2796BCEE26A2C78900F6BA47 /* game */,
 			);
@@ -238,6 +252,9 @@
 				2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */,
 				27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */,
 				27BBB34226A5D2D300339239 /* StarView.swift */,
+				27ACF00D26A6A04B003BABB0 /* LayoutDescription.swift */,
+				27ACF01626A6B23C003BABB0 /* LayoutShimmerScreenshot.swift */,
+				27ACF01826A6BFAC003BABB0 /* LayoutAboutGame.swift */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -259,6 +276,15 @@
 				2796BCF226A2CA3100F6BA47 /* Genres.swift */,
 			);
 			path = genre;
+			sourceTree = "<group>";
+		};
+		27ACF01126A6A927003BABB0 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				27ACF01226A6A940003BABB0 /* Screenshot.swift */,
+				27ACF01426A6AA86003BABB0 /* ResponseScreenshots.swift */,
+			);
+			path = screenshots;
 			sourceTree = "<group>";
 		};
 		27BBB34126A5C23100339239 /* detail */ = {
@@ -388,9 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				27007A79269DD4040032D6F8 /* MainActivity.swift in Sources */,
+				27ACF01326A6A940003BABB0 /* Screenshot.swift in Sources */,
 				2704716B269F478300AF05C0 /* ApiClient.swift in Sources */,
 				270B80FD269F3106007327F6 /* ViewModel.swift in Sources */,
 				27007A77269DD4040032D6F8 /* Good_GameApp.swift in Sources */,
+				27ACF00E26A6A04B003BABB0 /* LayoutDescription.swift in Sources */,
 				270B80FF269F3140007327F6 /* HomeViewModel.swift in Sources */,
 				2728070A26A1E41100C1CE51 /* HomeAdapter.swift in Sources */,
 				27007A94269DDC2F0032D6F8 /* ProfileFragment.swift in Sources */,
@@ -398,12 +426,16 @@
 				27BBB34326A5D2D300339239 /* StarView.swift in Sources */,
 				27007A92269DDB6D0032D6F8 /* HomeFragment.swift in Sources */,
 				2796BCF326A2CA3100F6BA47 /* Genres.swift in Sources */,
+				27ACF01726A6B23C003BABB0 /* LayoutShimmerScreenshot.swift in Sources */,
 				27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */,
 				27DCE60C26A33611005C8673 /* LayoutShimmerGenres.swift in Sources */,
 				2796BCF126A2CA1F00F6BA47 /* ResponseGenre.swift in Sources */,
 				2796BCE926A2BBE300F6BA47 /* LayoutShimmerGame.swift in Sources */,
+				27ACF01026A6A8E6003BABB0 /* ScreenshotAdapter.swift in Sources */,
+				27ACF01526A6AA86003BABB0 /* ResponseScreenshots.swift in Sources */,
 				2728070C26A1F1F700C1CE51 /* Extension.swift in Sources */,
 				27047169269F3EE600AF05C0 /* ApiEndpoint.swift in Sources */,
+				27ACF01926A6BFAC003BABB0 /* LayoutAboutGame.swift in Sources */,
 				2796BCED26A2BC2500F6BA47 /* ShimmerView.swift in Sources */,
 				27BBB33E26A5C1B500339239 /* DetailViewModel.swift in Sources */,
 				270B80F7269F2D10007327F6 /* Config.swift in Sources */,

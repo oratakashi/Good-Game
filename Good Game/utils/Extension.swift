@@ -12,7 +12,7 @@ extension View {
         if date != nil {
             let inputFormatter = DateFormatter()
             inputFormatter.dateFormat = "yyyy-MM-dd"
-            let showDate = inputFormatter.date(from: date!)
+            let showDate = inputFormatter.date(from: String(date!.prefix(10)))
             inputFormatter.dateFormat = "dd MMM yyyy"
             return inputFormatter.string(from: showDate!)
         }else{
