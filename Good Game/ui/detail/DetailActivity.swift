@@ -17,7 +17,7 @@ struct DetailActivity: View {
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 16){
+            VStack(alignment: .leading, spacing: 24){
                 if viewModel.isLoading == false {
                     let data = viewModel.detailGame.first!
                     Image(uiImage: gameImage)
@@ -82,7 +82,6 @@ struct DetailActivity: View {
                     Rectangle()
                         .foregroundColor(.secondary)
                         .frame(height: 3)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         .opacity(0.8)
                     ZStack{
                         NavigationLink(destination: LayoutAboutGame(game: data)) {
@@ -128,6 +127,48 @@ struct DetailActivity: View {
                             }
                         }
                     }
+                    
+                    if data.publishers.first != nil {
+                        let pub = data.publishers.first!
+                        Text("More by "+pub.name)
+                            .font(.system(size: 24, weight: .bold))
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                            .onAppear{
+                                viewModel.getRecomendation(id: pub.id)
+                            }
+                        if viewModel.recomendationLoading == false {
+                            ScrollView(.horizontal,showsIndicators: false) {
+                                HStack(spacing: 8) {
+                                    ForEach(viewModel.recomendation){ game in
+                                        if game.id == viewModel.recomendation.first!.id {
+                                            GanreAdapter(game: game)
+                                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+                                        }else{
+                                            GanreAdapter(game: game)
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            .frame(height: 230)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                            .clipped()
+                        }else{
+                            ScrollView(.horizontal,showsIndicators: false) {
+                                HStack(spacing: 5) {
+                                    ForEach(0...10, id: \.self) { _ in
+                                        LayoutShimmerGenres()
+                                    }
+                                }.padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                            }
+                            .frame(height: 230)
+                            .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                            .clipped()
+                        }
+                    }
+                }
+                else {
+                    LayoutShimmerDetail()
                 }
             }
         }

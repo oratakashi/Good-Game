@@ -37,6 +37,7 @@
 		27BBB33E26A5C1B500339239 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33D26A5C1B500339239 /* DetailViewModel.swift */; };
 		27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB33F26A5C22A00339239 /* DetailGames.swift */; };
 		27BBB34326A5D2D300339239 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBB34226A5D2D300339239 /* StarView.swift */; };
+		27DC50E726A9C5AC005E44BE /* LayoutShimmerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC50E626A9C5AB005E44BE /* LayoutShimmerDetail.swift */; };
 		27DCE60826A32FAB005C8673 /* GanreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCE60726A32FAB005C8673 /* GanreAdapter.swift */; };
 		27DCE60C26A33611005C8673 /* LayoutShimmerGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */; };
 		DCDC7FF28F051AC9DF5F7088 /* Pods_Good_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FF891744A23A81C1C2C529 /* Pods_Good_Game.framework */; };
@@ -75,6 +76,7 @@
 		27BBB33D26A5C1B500339239 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		27BBB33F26A5C22A00339239 /* DetailGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGames.swift; sourceTree = "<group>"; };
 		27BBB34226A5D2D300339239 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		27DC50E626A9C5AB005E44BE /* LayoutShimmerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutShimmerDetail.swift; sourceTree = "<group>"; };
 		27DCE60726A32FAB005C8673 /* GanreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanreAdapter.swift; sourceTree = "<group>"; };
 		27DCE60B26A33611005C8673 /* LayoutShimmerGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutShimmerGenres.swift; sourceTree = "<group>"; };
 		43287279A972A405DFB13329 /* Pods-Good Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Game.release.xcconfig"; path = "Target Support Files/Pods-Good Game/Pods-Good Game.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				27ACF00D26A6A04B003BABB0 /* LayoutDescription.swift */,
 				27ACF01626A6B23C003BABB0 /* LayoutShimmerScreenshot.swift */,
 				27ACF01826A6BFAC003BABB0 /* LayoutAboutGame.swift */,
+				27DC50E626A9C5AB005E44BE /* LayoutShimmerDetail.swift */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				2728070A26A1E41100C1CE51 /* HomeAdapter.swift in Sources */,
 				27007A94269DDC2F0032D6F8 /* ProfileFragment.swift in Sources */,
 				270B80FB269F2F56007327F6 /* Games.swift in Sources */,
+				27DC50E726A9C5AC005E44BE /* LayoutShimmerDetail.swift in Sources */,
 				27BBB34326A5D2D300339239 /* StarView.swift in Sources */,
 				27007A92269DDB6D0032D6F8 /* HomeFragment.swift in Sources */,
 				2796BCF326A2CA3100F6BA47 /* Genres.swift in Sources */,

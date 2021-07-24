@@ -11,8 +11,10 @@ final class DetailViewModel: ViewModel {
     
     @Published var isLoading: Bool = true
     @Published var ssLoading: Bool = true
+    @Published var recomendationLoading: Bool = true
     @Published var detailGame: [DetailGames] = []
     @Published var screenShots: [Screenshot] = []
+    @Published var recomendation: [Games] = []
     
     func getDetail(game: Games){
         DispatchQueue.global().async {
@@ -27,7 +29,9 @@ final class DetailViewModel: ViewModel {
     
     func getScreenshots(game: Games){
         DispatchQueue.main.sync {
-            self.ssLoading = true
+            if(self.detailGame.count == 0){
+                self.ssLoading = true
+            }
         }
         URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.screenshot(gameId: game.id))
         ){ data, response, error in
@@ -49,7 +53,9 @@ final class DetailViewModel: ViewModel {
     
     func getDetailGames(game: Games){
         DispatchQueue.main.sync {
-            self.isLoading = true
+            if(self.detailGame.count == 0){
+                self.ssLoading = true
+            }   
         }
         
         URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.detail(gameId: game.id), pageSize: "0")
@@ -69,5 +75,32 @@ final class DetailViewModel: ViewModel {
                 print("\(error)")
             }
         }.resume()
+    }
+    
+    func getRecomendation(id: Int){
+        if recomendation.count == 0 {
+            self.recomendationLoading = true
+            DispatchQueue.global().async {
+                URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.games, query: [
+                    URLQueryItem(name: "ordering", value: "-rating"),
+                    URLQueryItem(name: "publishers", value: String(id))
+                ])
+                ){ data, response, error in
+                    guard let response = response as? HTTPURLResponse, let data = data else { return }
+                    do {
+                        let decoder = try JSONDecoder().decode(Response.self, from: data)
+                        print("Success: \(data), HTTP Status: \(response.statusCode)")
+                        print(decoder)
+                        
+                        DispatchQueue.main.sync {
+                            self.recomendationLoading = false
+                            self.recomendation = decoder.results
+                        }
+                    } catch {
+                        print("\(error)")
+                    }
+                }.resume()
+            }
+        }
     }
 }
