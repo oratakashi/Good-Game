@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeAdapter: View {
     var game: Games
@@ -18,8 +19,9 @@ struct HomeAdapter: View {
                 Rectangle().opacity(0.0)
             }
             HStack(alignment: .top) {
-                Image(uiImage: gameImage)
+                WebImage(url: URL(string: game.background_image))
                     .resizable()
+                    .placeholder(Image("imgLoading"))
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 80, height: 80)
                     .clipShape(RoundedRectangle(cornerRadius: 25))

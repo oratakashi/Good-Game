@@ -6,34 +6,20 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ScreenshotAdapter: View {
     
     var screenShots: Screenshot
     
-    @State var gameImage = UIImage(named: "imgLoading")!
-    
     var body: some View {
         ZStack {
-            Image(uiImage: gameImage)
+            WebImage(url: URL(string: screenShots.image))
                 .resizable()
+                .placeholder(Image("imgLoading"))
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 180)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-                .onAppear{
-                    DispatchQueue.global().async {
-                        guard let url = URL(string: self.screenShots.image) else { return }
-                        URLSession.shared.dataTask(with: url) { (data, response, error) in
-                            guard let data = data else { return }
-                            guard let image = UIImage(data: data) else { return }
-                            
-                            DispatchQueue.main.async {
-                                self.gameImage = image
-                            }
-                            
-                        }.resume()
-                    }
-                }
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct GanreAdapter: View {
     var game: Games
@@ -14,8 +15,9 @@ struct GanreAdapter: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: gameImage)
+            WebImage(url: URL(string: game.background_image))
                 .resizable()
+                .placeholder(Image("imgLoading"))
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -35,20 +37,41 @@ struct GanreAdapter: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10)),
                     alignment: .bottom
                 )
-                .onAppear{
-                    DispatchQueue.global().async {
-                        guard let url = URL(string: self.game.background_image) else { return }
-                        URLSession.shared.dataTask(with: url) { (data, response, error) in
-                            guard let data = data else { return }
-                            guard let image = UIImage(data: data) else { return }
-                            
-                            DispatchQueue.main.async {
-                                self.gameImage = image
-                            }
-                            
-                        }.resume()
-                    }
-                }
+//            Image(uiImage: gameImage)
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(width: 150, height: 230)
+//                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                .overlay(
+//                    //This HStack places the text in the middle with some padding
+//                    HStack {
+//                        Spacer()
+//                        Text(game.name)
+//                            .font(.headline)
+//                            .foregroundColor(.white)
+//                            .lineLimit(2)
+//                            .padding(.vertical)
+//                        Spacer()
+//                    }
+//                    .background(Color.gray)
+//                    .opacity(0.8)
+//                    .clipShape(RoundedRectangle(cornerRadius: 10)),
+//                    alignment: .bottom
+//                )
+//                .onAppear{
+//                    DispatchQueue.global().async {
+//                        guard let url = URL(string: self.game.background_image) else { return }
+//                        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//                            guard let data = data else { return }
+//                            guard let image = UIImage(data: data) else { return }
+//
+//                            DispatchQueue.main.async {
+//                                self.gameImage = image
+//                            }
+//
+//                        }.resume()
+//                    }
+//                }
             NavigationLink(destination: DetailActivity(game: game)) {
                 Rectangle().opacity(0.0)
             }

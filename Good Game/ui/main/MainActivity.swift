@@ -13,6 +13,7 @@ struct MainActivity: View {
                 NavigationView {
                     HomeFragment()
                 }
+                    
                     .tabItem {
                         VStack {
                             Image(systemName: "house")
@@ -20,6 +21,16 @@ struct MainActivity: View {
                         }
                     }
                     .tag(1)
+                NavigationView {
+                    FavoriteFragment()
+                }
+                .tabItem {
+                    VStack {
+                        Image(systemName: "heart")
+                        Text("Favorite")
+                    }
+                }
+                .tag(2)
                 NavigationView {
                     ProfileFragment()
                 }
@@ -29,7 +40,7 @@ struct MainActivity: View {
                             Text("About")
                         }
                     }
-                    .tag(2)
+                    .tag(3)
             }
             .accentColor(.yellow)
     }

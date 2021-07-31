@@ -1,3 +1,38 @@
-PODFILE CHECKSUM: 54220e83a722c2793c28ec4a3c26f166a1663ca7
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageSwiftUI (2.0.2):
+    - SDWebImage (~> 5.10)
+  - YYDebugDatabase (2.1.0):
+    - FMDB
+    - GCDWebServer
+
+DEPENDENCIES:
+  - SDWebImageSwiftUI
+  - YYDebugDatabase
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - GCDWebServer
+    - SDWebImage
+    - SDWebImageSwiftUI
+    - YYDebugDatabase
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
+  YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
+
+PODFILE CHECKSUM: 0fecf88018983e993fab64c108df1e90812383a9
 
 COCOAPODS: 1.10.1

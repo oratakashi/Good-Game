@@ -15,6 +15,9 @@ final class DetailViewModel: ViewModel {
     @Published var detailGame: [DetailGames] = []
     @Published var screenShots: [Screenshot] = []
     @Published var recomendation: [Games] = []
+    @Published var isFav: Bool = true
+    @Published var favImage: String = "heart"
+    @Published var favText: String = "Tambahkan ke Favorite"
     
     func getDetail(game: Games){
         DispatchQueue.global().async {
@@ -23,7 +26,8 @@ final class DetailViewModel: ViewModel {
             }
             if(self.screenShots.count == 0){
                 self.getScreenshots(game: game)
-            }            
+            }        
+            self.getFavStatus(game: game)
         }
     }
     
@@ -33,7 +37,7 @@ final class DetailViewModel: ViewModel {
                 self.ssLoading = true
             }
         }
-        URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.screenshot(gameId: game.id))
+        URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.screenshot(gameId: Int(game.id)))
         ){ data, response, error in
             guard let response = response as? HTTPURLResponse, let data = data else { return }
             do {
@@ -58,7 +62,7 @@ final class DetailViewModel: ViewModel {
             }   
         }
         
-        URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.detail(gameId: game.id), pageSize: "0")
+        URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.detail(gameId: Int(game.id)), pageSize: "0")
         ){ data, response, error in
             guard let response = response as? HTTPURLResponse, let data = data else { return }
             do {
@@ -100,6 +104,34 @@ final class DetailViewModel: ViewModel {
                         print("\(error)")
                     }
                 }.resume()
+            }
+        }
+    }
+    
+    func getFavStatus(game: Games){
+        db.findById(game.id){ data in
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.isFav = true
+                }                
+            }else{
+                DispatchQueue.main.async {
+                    self.isFav = false
+                }
+            }
+        }
+    }
+    
+    func addFav(game: Games){
+        db.findById(game.id){ data in
+            if data != nil {
+                self.db.deleteById(game.id){
+                    self.getFavStatus(game: game)
+                }
+            }else{
+                self.db.create(game){
+                    self.getFavStatus(game: game)
+                }
             }
         }
     }

@@ -52,6 +52,18 @@ struct ProfileFragment: View {
             }
         }
             .navigationBarTitle(Text("About"), displayMode: .large)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    ZStack {
+                        Text("")
+                        NavigationLink(destination: SearchActivity()) {
+                            Image(systemName: "magnifyingglass")
+                                .font(.title2)
+                        }
+                        
+                    }
+                }
+            }
     }
 }
 

@@ -95,7 +95,6 @@ final class HomeViewModel: ViewModel {
     func getGames(genre: Int){
         if self.genreGames[genre] == nil {
             DispatchQueue.global().async {
-                
                 URLSession.shared.dataTask(with: self.client.getRequest(endpoint: ApiEndpoint.games, query: [
                     URLQueryItem(name: "ordering", value: "-rating"),
                     URLQueryItem(name: "genres", value: String(genre))
@@ -118,5 +117,9 @@ final class HomeViewModel: ViewModel {
                 }.resume()
             }
         }
+    }
+    
+    func Test() {
+        
     }
 }

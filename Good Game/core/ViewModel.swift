@@ -9,4 +9,5 @@ import Foundation
 
 class ViewModel: ObservableObject {    
     var client: ApiClient = ApiClient()
+    var db: FavoriteDao = FavoriteDao()
 }

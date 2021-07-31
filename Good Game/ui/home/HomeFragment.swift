@@ -55,9 +55,7 @@ struct HomeFragment: View {
                     Text("Top Rating")
                         .font(.system(size: 24, weight: .bold))
                     ForEach(viewModel.topRating){ game in
-                        ZStack {
-                            HomeAdapter(game: game)
-                        }
+                        HomeAdapter(game: game)
                     }
                     
                     if viewModel.loadMore == true {
@@ -90,6 +88,18 @@ struct HomeFragment: View {
         }
         .clipped()
         .navigationBarTitle(Text("Good Game"), displayMode: .large)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                ZStack {
+                    Text("")
+                    NavigationLink(destination: SearchActivity()) {
+                        Image(systemName: "magnifyingglass")
+                            .font(.title2)
+                    }
+                    
+                }
+            }
+        }
     }
 }
 
