@@ -11,6 +11,9 @@ import Foundation
 struct HomeFragment: View {
     @ObservedObject var viewModel: HomeViewModel = HomeViewModel()
     
+    @State var isDetailShow: Bool = false
+    @State var selectedGame: Games? = nil
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -88,6 +91,18 @@ struct HomeFragment: View {
         }
         .clipped()
         .navigationBarTitle(Text("Good Game"), displayMode: .large)
+        .sheet(isPresented: $isDetailShow,
+               onDismiss: { self.isDetailShow = false }) {
+            if selectedGame != nil {
+                DetailActivity(game: selectedGame!)
+            }else{
+                VStack{}
+                    .onAppear{
+                        isDetailShow = false
+                    }
+            }
+            
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 ZStack {

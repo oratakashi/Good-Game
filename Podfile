@@ -6,5 +6,6 @@ target 'Good Game' do
   use_frameworks!
   
   pod 'SDWebImageSwiftUI'
+  pod 'AlertToast'
   # Pods for Good Game
 end

@@ -11,6 +11,6 @@ struct Games: Codable, Identifiable {
     let id: Int32
     let name: String
     let released: String?
-    let background_image: String
+    let background_image: String?
     let rating: Float
 }

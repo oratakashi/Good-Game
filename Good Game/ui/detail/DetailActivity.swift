@@ -22,7 +22,7 @@ struct DetailActivity: View {
                 VStack(alignment: .leading, spacing: 24){
                     if viewModel.isLoading == false {
                         let data = viewModel.detailGame.first!
-                        WebImage(url: URL(string: game.background_image))
+                        WebImage(url: URL(string: game.background_image  ?? ""))
                             .resizable()
                             .placeholder(Image("imgLoading"))
                             .frame(height: 280)
@@ -161,6 +161,7 @@ struct DetailActivity: View {
                     }
                 }
             }
+            .fixFlickering()
             HStack{
                 Spacer()
                 if viewModel.isLoading == false {
@@ -192,24 +193,10 @@ struct DetailActivity: View {
                 }                
                 Spacer()
             }.padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 16))
-            
-        }
-        .clipped()
-        .onAppear{
-            viewModel.getDetail(game: game)
         }
         .navigationBarTitle(Text("Detail Game"), displayMode: .inline)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                ZStack {
-                    Text("")
-                    NavigationLink(destination: SearchActivity()) {
-                        Image(systemName: "magnifyingglass")
-                            .font(.title2)
-                    }
-                    
-                }
-            }
+        .onAppear{
+            viewModel.getDetail(game: game)
         }
     }
 }

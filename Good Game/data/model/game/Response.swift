@@ -8,5 +8,6 @@
 import Foundation
 
 struct Response: Codable {
+    let next: String?
     let results: [Games]
 }

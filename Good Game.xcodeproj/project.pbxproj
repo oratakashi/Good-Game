@@ -24,6 +24,7 @@
 		2722E7E026B444C80018875A /* GoodGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2722E7DE26B444C80018875A /* GoodGame.xcdatamodeld */; };
 		2728070A26A1E41100C1CE51 /* HomeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728070926A1E41100C1CE51 /* HomeAdapter.swift */; };
 		2728070C26A1F1F700C1CE51 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728070B26A1F1F700C1CE51 /* Extension.swift */; };
+		2748816326B6F7C30054B891 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2748816226B6F7C30054B891 /* SearchAdapter.swift */; };
 		2796BCE326A292FD00F6BA47 /* DetailActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCE226A292FD00F6BA47 /* DetailActivity.swift */; };
 		2796BCE926A2BBE300F6BA47 /* LayoutShimmerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCE826A2BBE300F6BA47 /* LayoutShimmerGame.swift */; };
 		2796BCED26A2BC2500F6BA47 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */; };
@@ -73,6 +74,7 @@
 		2722E7DF26B444C80018875A /* Favorite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorite.xcdatamodel; sourceTree = "<group>"; };
 		2728070926A1E41100C1CE51 /* HomeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapter.swift; sourceTree = "<group>"; };
 		2728070B26A1F1F700C1CE51 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2748816226B6F7C30054B891 /* SearchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapter.swift; sourceTree = "<group>"; };
 		2796BCE226A292FD00F6BA47 /* DetailActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActivity.swift; sourceTree = "<group>"; };
 		2796BCE826A2BBE300F6BA47 /* LayoutShimmerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutShimmerGame.swift; sourceTree = "<group>"; };
 		2796BCEC26A2BC2500F6BA47 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			children = (
 				27D0DF7B26B564EE00F6545B /* SearchActivity.swift */,
 				27D0DF7F26B5931600F6545B /* SearchViewModel.swift */,
+				2748816226B6F7C30054B891 /* SearchAdapter.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				27D0DF8026B5931600F6545B /* SearchViewModel.swift in Sources */,
 				27ACF01726A6B23C003BABB0 /* LayoutShimmerScreenshot.swift in Sources */,
 				27BBB34026A5C22A00339239 /* DetailGames.swift in Sources */,
+				2748816326B6F7C30054B891 /* SearchAdapter.swift in Sources */,
 				271A8A8F26B5238600EA8AC7 /* FavoriteViewModel.swift in Sources */,
 				27DCE60C26A33611005C8673 /* LayoutShimmerGenres.swift in Sources */,
 				2796BCF126A2CA1F00F6BA47 /* ResponseGenre.swift in Sources */,

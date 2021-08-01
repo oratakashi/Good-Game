@@ -15,7 +15,7 @@ struct GanreAdapter: View {
     
     var body: some View {
         ZStack {
-            WebImage(url: URL(string: game.background_image))
+            WebImage(url: URL(string: game.background_image ?? ""))
                 .resizable()
                 .placeholder(Image("imgLoading"))
                 .aspectRatio(contentMode: .fill)

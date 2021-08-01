@@ -17,7 +17,7 @@ struct ApiClient {
                 URLQueryItem(name: "platforms", value: "4")
             ]
             
-            if pageSize == Config().pageSize{
+            if pageSize == Config().pageSize {
                 components.queryItems?.append(URLQueryItem(name: "page_size", value: Config().pageSize))
             }else if pageSize != "0"{
                 components.queryItems?.append(URLQueryItem(name: "page_size", value: pageSize))
