@@ -11,8 +11,6 @@ import SDWebImageSwiftUI
 struct GanreAdapter: View {
     var game: Games
     
-    @State var gameImage = UIImage(named: "imgLoading")!
-    
     var body: some View {
         ZStack {
             WebImage(url: URL(string: game.background_image ?? ""))

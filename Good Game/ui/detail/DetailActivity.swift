@@ -8,13 +8,16 @@
 import SwiftUI
 import AttributedText
 import SDWebImageSwiftUI
+import AlertToast
 
 struct DetailActivity: View {
     var game: Games
     
     @ObservedObject var viewModel: DetailViewModel = DetailViewModel()
     
-    @State var gameImage = UIImage(named: "imgLoading")!
+    @State var isDetailShow: Bool = false
+    @State var selectedGame: Games? = nil
+    @State private var showToast = false
     
     var body: some View {
         ZStack(alignment: .bottomLeading){
@@ -75,6 +78,7 @@ struct DetailActivity: View {
                         ZStack{
                             NavigationLink(destination: LayoutAboutGame(game: data)) {
                                 Rectangle().opacity(0.0)
+                                    .frame(height: 10)
                             }
                             HStack{
                                 Text("About This Game")
@@ -130,10 +134,10 @@ struct DetailActivity: View {
                                     HStack(spacing: 8) {
                                         ForEach(viewModel.recomendation){ game in
                                             if game.id == viewModel.recomendation.first!.id {
-                                                GanreAdapter(game: game)
+                                                DetailAdapter(game: game, isDetailShow: $isDetailShow, selectedGame: $selectedGame)
                                                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
                                             }else{
-                                                GanreAdapter(game: game)
+                                                DetailAdapter(game: game, isDetailShow: $isDetailShow, selectedGame: $selectedGame)
                                             }
                                             
                                         }
@@ -195,6 +199,24 @@ struct DetailActivity: View {
             }.padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 16))
         }
         .navigationBarTitle(Text("Detail Game"), displayMode: .inline)
+        .sheet(isPresented: $isDetailShow,
+               onDismiss: { self.isDetailShow = false }) {
+            if selectedGame != nil {
+                DetailModal(game: selectedGame!)                   
+            }else{
+                VStack{}
+                    .toast(isPresenting: $showToast, alert: {
+                        AlertToast(type: .error(.red), title: "Something Wrong!, Please select another result!")
+                    }, completion: {
+                        isDetailShow = false
+                    })
+                    .onAppear{
+                        showToast.toggle()
+                    }
+                
+            }
+            
+        }
         .onAppear{
             viewModel.getDetail(game: game)
         }

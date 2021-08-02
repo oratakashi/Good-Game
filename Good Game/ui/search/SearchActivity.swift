@@ -51,7 +51,7 @@ struct SearchActivity: View {
             .sheet(isPresented: $isDetailShow,
                    onDismiss: { self.isDetailShow = false }) {
                 if selectedGame != nil {
-                    DetailActivity(game: selectedGame!)                   
+                    DetailModal(game: selectedGame!)                   
                 }else{
                     VStack{}
                         .toast(isPresenting: $showToast, alert: {
