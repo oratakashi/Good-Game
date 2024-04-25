@@ -16,11 +16,14 @@ struct FavoriteFragment: View {
         ZStack(alignment: .bottomLeading) {
             if viewModel.favorite.count > 0 {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 10){
+                    VStack(
+                        alignment: .leading,
+                        spacing: 10
+                    ){
                         ForEach(viewModel.favorite){ game in
                             HomeAdapter(game: game)
                         }
-                    }
+                    }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 }
             }else{
                 VStack(alignment: .leading, spacing: 10) {
