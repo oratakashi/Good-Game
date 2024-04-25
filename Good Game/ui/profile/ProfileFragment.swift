@@ -43,7 +43,7 @@ struct ProfileFragment: View {
                     .offset(y: -80).padding(.bottom, -80)
                 
                 VStack(alignment: .center){
-                    Text("Abdul Hafiidh S")
+                    Text("Anonymous")
                         .font(.system(size: 24))
                     Text("Android Developer")
                         .font(.system(size: 18))
